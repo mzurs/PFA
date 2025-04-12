@@ -48,42 +48,78 @@ The user receives periodic updates (e.g., weekly reports) on portfolio performan
     
     No automated trading or rebalancing yet; manual user approval for trades.
 
-### Features to Add Later
-Once the MVP is validated, you can expand functionality to make the agent more autonomous, user-friendly, and feature-rich. Here’s a roadmap:
+    ### Further Phases
 
-Phase 1: Automation & Trading (1-3 Months Post-MVP)
-Automated Trading:
-Integrate with a DEX (e.g., Uniswap) via smart contracts to execute buy/sell orders.
-Use Web3.py to sign transactions via MetaMask.
-Basic Rebalancing:
-Add logic to rebalance portfolio monthly (e.g., if BTC exceeds 50% of high-risk portfolio, sell excess).
-User Notifications:
-Email or in-app alerts for significant market changes or portfolio updates.
-Phase 2: Advanced AI & Personalization (3-6 Months Post-MVP)
-Machine Learning Model:
-Replace rule-based logic with a trained ML model (e.g., LSTM for price prediction) using historical data.
-Train on Binance or CoinGecko data for better asset selection.
-Custom Goals:
-Allow users to set specific goals (e.g., “grow $1,000 to $1,500 in 6 months”).
-Adjust portfolio dynamically based on goal progress.
-Sentiment Analysis:
-Integrate X posts or news APIs (e.g., NewsAPI) to analyze market sentiment and adjust strategies.
-Phase 3: Scalability & Security (6-12 Months Post-MVP)
-Multi-Chain Support:
-Expand to Binance Smart Chain, Solana, etc., for broader asset options.
-Enhanced Security:
-Add multi-signature wallet support for safer fund management.
-Implement anomaly detection to flag suspicious wallet activities.
-Scalable Hosting:
-Deploy on AWS or Google Cloud with load balancing for more users.
-Phase 4: Ecosystem Integration (12+ Months Post-MVP)
-DeFi Integration:
-Stake assets in protocols like Aave or Compound for additional yield.
-Social Features:
-Allow users to share portfolio performance (anonymized) or follow top-performing strategies.
-Mobile App:
-Develop iOS/Android app for on-the-go management.
-Optional Long-Term Features
-Tax Reporting: Generate tax-compliant reports for crypto trades.
-AI Advisor: Chatbot interface for personalized advice (e.g., “Should I sell ETH now?”).
-NFT Support: Include NFTs in the portfolio with valuation tools.
+    #### Features to Add Later
+    Once the MVP is validated, we can expand functionality to make the agent more autonomous, user-friendly, and feature-rich. Here’s a roadmap:
+
+    `Phase 2: Automation & Trading `
+    
+    `Automated Trading:`
+
+    Integrate with a DEX (e.g., Uniswap) via smart contracts to execute buy/sell orders.
+    Use Web3.py to sign transactions via MetaMask.
+    
+    `Basic Rebalancing:`
+
+    Add logic to rebalance portfolio monthly (e.g., if BTC exceeds 50% of high-risk portfolio, sell excess).
+    
+    `User Notifications:`
+
+    Email or in-app alerts for significant market changes or portfolio updates.
+    
+    `Phase 3: Advanced AI & Personalization`
+    
+    `Machine Learning Model:`
+
+    Replace rule-based logic with a trained ML model (e.g., LSTM for price prediction) using historical data.
+    Train on Binance or CoinGecko data for better asset selection.
+    
+    `Custom Goals:`
+
+    Allow users to set specific goals (e.g., “grow $1,000 to $1,500 in 6 months”).
+    Adjust portfolio dynamically based on goal progress.
+    
+    `Sentiment Analysis:`
+
+    Integrate X posts or news APIs (e.g., NewsAPI) to analyze market sentiment and adjust strategies.
+    
+    `Phase 4: Scalability & Security`
+    
+    `Multi-Chain Support:`
+
+    Expand to Binance Smart Chain, Solana, etc., for broader asset options.
+    
+    `Enhanced Security:`
+
+    Add multi-signature wallet support for safer fund management.
+    Implement anomaly detection to flag suspicious wallet activities.
+    
+    `Scalable Hosting:`
+
+    Deploy on AWS or Google Cloud with load balancing for more users.
+    Phase 4: Ecosystem Integration (12+ Months Post-MVP)
+    
+    `DeFi Integration:`
+
+    Stake assets in protocols like Aave or Compound for additional yield.
+    
+    `Social Features:`
+
+    Allow users to share portfolio performance (anonymized) or follow top-performing strategies.
+    
+    `Mobile App:`
+
+    Develop iOS/Android app for on-the-go management.
+
+    `Tax Reporting:`
+    
+    Generate tax-compliant reports for crypto trades.
+    
+    `AI Advisor:`
+
+    Chatbot interface for personalized advice (e.g., “Should I sell ETH now?”).
+    
+    `NFT Support:` 
+    
+    Include NFTs in the portfolio with valuation tools.
