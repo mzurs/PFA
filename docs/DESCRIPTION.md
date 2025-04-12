@@ -98,7 +98,7 @@ The user receives periodic updates (e.g., weekly reports) on portfolio performan
     `Scalable Hosting:`
 
     Deploy on AWS or Google Cloud with load balancing for more users.
-    Phase 4: Ecosystem Integration (12+ Months Post-MVP)
+
     
     `DeFi Integration:`
 
@@ -120,6 +120,3 @@ The user receives periodic updates (e.g., weekly reports) on portfolio performan
 
     Chatbot interface for personalized advice (e.g., “Should I sell ETH now?”).
     
-    `NFT Support:` 
-    
-    Include NFTs in the portfolio with valuation tools.
