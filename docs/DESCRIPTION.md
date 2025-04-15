@@ -119,4 +119,3 @@ The user receives periodic updates (e.g., weekly reports) on portfolio performan
     `AI Advisor:`
 
     Chatbot interface for personalized advice (e.g., “Should I sell ETH now?”).
-    
