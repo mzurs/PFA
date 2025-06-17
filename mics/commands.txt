@@ -1,0 +1,9 @@
+To add new dependencies in the future:
+
+Add them to the dependencies list in pyproject.toml
+# To install pip-compile and pip-sync you need to run " uv pip install pip-tools"
+
+Run pip-compile pyproject.toml to update requirements.txt
+Run pip-sync requirements.txt to install the new dependencies
+
+
