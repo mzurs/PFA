@@ -1,11 +1,11 @@
-from dotenv import load_dotenv
 import os
-from agents import AsyncOpenAI, OpenAIChatCompletionsModel, RunConfig
+
+from agents import AsyncOpenAI, OpenAIChatCompletionsModel
 from agents.run import RunConfig
+from dotenv import load_dotenv
 
 
 def model_config():
-
     # Load the environment variables from the .env file
     load_dotenv()
 
@@ -31,5 +31,12 @@ def model_config():
         model=model, model_provider=external_client, tracing_disabled=True
     )
 
+    return (config, model)
 
-    return (config,model)
+
+def is_valid_hex_key(key: str) -> bool:
+    try:
+        int(key, 16)
+        return True
+    except ValueError:
+        return False

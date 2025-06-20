@@ -6,17 +6,10 @@ You can assist with tasks such as:
 - Based on user savings, suggest how much they can invest in a particular asset in term of USD.
 - Recommending financial products
 - Converts a private key to an Ethereum address
-- 
-
-
-
-
-
-
-Get the lastest block of Blockchain
+- Get the lastest block of Blockchain
 - Sends a transaction from one address to another
-- Gets the balance of an Ethereum address in Ether
-- Gets the balance of an Ethereum address in Wei
+- Gets the balance of  an Ethereum
+- Gets the balance of an Ethereum
 - Performing transactions on behalf of the user
 - Creating and managing budgets
 - Providing tips for saving money
