@@ -1,14 +1,16 @@
 import os
-import random
-from src.agent_prompts import AGENT_INSTRUCTIONS_PROMPT
-from src.config import model_config
-from dotenv import load_dotenv
 from typing import cast
+
 import chainlit as cl
-from agents import Agent, Runner, AsyncOpenAI, OpenAIChatCompletionsModel, function_tool
+from agents import Agent, Runner
 from agents.run import RunConfig
-from src.pfa import get_main_agent
-from src.user_info import UserInfo, ask_user_info
+from dotenv import load_dotenv
+
+from src.config import model_config
+from src.pfa import PFA
+from src.user import User
+
+load_dotenv()
 
 
 @cl.on_chat_start
@@ -23,20 +25,29 @@ async def start():
     ).send()
 
     # Collect essential user information
-    user_profile: UserInfo = await ask_user_info()
+    user_profile: User = User(
+        name="",
+        age=0,
+        occupation="",
+        monthly_income=0.00,
+        savings=0.00,
+        risk_tolerance="",
+    )
+    user_profile: User = await user_profile.set_user()
 
-    agent = get_main_agent()
+    agent: Agent = PFA().get_main_agent()
+    load_dotenv()
 
     # Initialize chat history with user context
     chat_history = user_profile.to_context_message()  # This now returns a list
     cl.user_session.set("chat_history", chat_history)
-
+    cl.user_session.set("private_key", user_profile.private_key)
+    cl.user_session.set("rpc_url", os.getenv("RPC_URL"))
     cl.user_session.set("user_info", user_profile)
-    agent.instructions += f"\n\nUser Profile: {chat_history[0]['content']}"
     cl.user_session.set("agent", agent)
 
     await cl.Message(
-        content=f"Thank you {user_profile.name}! I now have enough information to provide personalized financial advice."
+        content=f"Thank you {user_profile.name}! I now have enough information to provide personalized financial advice. You can now ask me anything related to your finances or investments!"
     ).send()
 
 
@@ -49,6 +60,13 @@ async def main(message: cl.Message):
 
     agent: Agent = cast(Agent, cl.user_session.get("agent"))
     config: RunConfig = cast(RunConfig, cl.user_session.get("config"))
+    user: User = cast(User, cl.user_session.get("user_info"))
+
+    if not agent or not config or not user:
+        msg.content = "Error: Agent or configuration or user info not found. Please start a new session."
+        await msg.update()
+
+        return await start()
 
     # Get the chat history, initialize if None
     history = cl.user_session.get("chat_history") or []
@@ -79,3 +97,13 @@ async def main(message: cl.Message):
         msg.content = f"Error: {str(e)}"
         await msg.update()
         print(f"Error: {str(e)}")
+
+
+@cl.on_stop
+def on_stop():
+    print("The user wants to stop the task!")
+
+
+@cl.on_chat_end
+def on_chat_end():
+    print("The user disconnected!")
